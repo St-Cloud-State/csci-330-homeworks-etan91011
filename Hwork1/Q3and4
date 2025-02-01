@@ -1,0 +1,32 @@
+Script started on 2025-01-27 05:12:22+00:00 [TERM="xterm-256color" TTY="/dev/pts/2" COLUMNS="138" LINES="15"]
+[0;32m@etan91011 [0m➜ [1;34m/workspaces/csci-330-spring-2025-csci-330-homeworks-CSCI330 [0;36m([1;31mmain[0;36m) [0m$ sbcl
+This is SBCL 1.4.3, an implementation of ANSI Common Lisp.
+More information about SBCL is available at <http://www.sbcl.org/>.
+
+SBCL is free software, provided as is, with absolutely no warranty.
+It is mostly in the public domain; some portions are provided under
+BSD-style licenses.  See the CREDITS and COPYING files in the
+distribution for more information.
+* (CAR (CDR (CDR '(a b x d))))
+
+X
+* (CAR (CDR (CAR (CDR '(a (b (x d)))))))
+
+(X D)
+* (CAR (CDR (CAR (CDR (CAR (CAR '(((a (b (x) d))))))))))
+
+(X)
+* (cons 'a (cons 'b (cons 'x (cons 'd nil))))
+
+(A B X D)
+* (cons 'a (cons (cons 'b (cons (cons 'x (cons 'd nil)) nil)) nil))
+
+(A (B (X D)))
+* (cons (cons (cons 'a (cons (cons 'b (cons (cons 'x nil) (cons 'd nil))) nil)) nil) nil)
+
+(((A (B (X) D))))
+* (quit)
+[0;32m@etan91011 [0m➜ [1;34m/workspaces/csci-330-spring-2025-csci-330-homeworks-CSCI330 [0;36m([1;31mmain[0;36m) [0m$ exit
+exit
+
+Script done on 2025-01-27 05:13:35+00:00 [COMMAND_EXIT_CODE="0"]
