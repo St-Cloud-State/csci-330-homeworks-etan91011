@@ -1,0 +1,744 @@
+Script started on 2025-02-05 04:43:15+00:00 [TERM="xterm-256color" TTY="/dev/pts/0" COLUMNS="165" LINES="15"]
+[0;32m@etan91011 [0m➜ [1;34m/workspaces/csci-330-homeworks-etan91011/Hwork2 [0;36m([1;31mmain[0;36m) [0m$ sbcl
+This is SBCL 2.0.1.debian, an implementation of ANSI Common Lisp.
+More information about SBCL is available at <http://www.sbcl.org/>.
+
+SBCL is free software, provided as is, with absolutely no warranty.
+It is mostly in the public domain; some portions are provided under
+BSD-style licenses.  See the CREDITS and COPYING files in the
+distribution for more information.
+* (NOT (EQUAL 3 (ABS -3)))
+NIL
+* (EVAL '(/ (+ 8 12) 2))
+10
+* (EVAL '(+ (* 3 3) (* 4 4)))
+25
+* (defun miles-per-gallon (initial-odometer-reading final-odometer-reading gallons-consumed) (/ (- final-odometer-reading initial-odometer-reading) gallons-consumed))
+MILES-PER-GALLON
+* (miles-per-gallon 12000 12500 10)
+50
+* (third (the quick brown fox))
+; in: THIRD (THE QUICK BROWN FOX)
+;     (THE QUICK BROWN FOX)
+; 
+; caught ERROR:
+;   Error while parsing arguments to special operator THE:
+;     too many elements in
+;       (QUICK BROWN FOX)
+;     to satisfy lambda list
+;       (SB-C::VALUE-TYPE SB-KERNEL:FORM):
+;     exactly 2 expected, but got 3
+; 
+; compilation unit finished
+;   caught 1 ERROR condition
+
+debugger invoked on a SB-INT:COMPILED-PROGRAM-ERROR in thread
+#<THREAD "main thread" RUNNING {1000560083}>:
+  Execution of a form compiled with errors.
+Form:
+  (THE QUICK BROWN FOX)
+Compile-time error:
+  Error while parsing arguments to special operator THE:
+  too many elements in
+    (QUICK BROWN FOX)
+  to satisfy lambda list
+    (SB-C::VALUE-TYPE SB-KERNEL:FORM):
+  exactly 2 expected, but got 3
+
+Type HELP for debugger help, or (SB-EXT:EXIT) to exit from SBCL.
+
+restarts (invokable by number or by possibly-abbreviated name):
+  0: [ABORT] Exit debugger, returning to top level.
+
+((LAMBDA ()))
+   source: (THE QUICK BROWN FOX)
+0] (third '(the quick brown fox))
+
+BROWN
+0] (list 2 and 2 is 4)
+; in: THIRD (THE QUICK BROWN FOX)
+;     (LIST 2 AND 2 IS 4)
+; 
+; caught WARNING:
+;   undefined variable: COMMON-LISP:AND
+; 
+; caught WARNING:
+;   undefined variable: COMMON-LISP-USER::IS
+; 
+; compilation unit finished
+;   Undefined variables:
+;     AND IS
+;   caught 2 WARNING conditions
+
+debugger invoked on a UNBOUND-VARIABLE in thread
+#<THREAD "main thread" RUNNING {1000560083}>:
+  The variable AND is unbound.
+
+Type HELP for debugger help, or (SB-EXT:EXIT) to exit from SBCL.
+
+restarts (invokable by number or by possibly-abbreviated name):
+  0: [CONTINUE   ] Retry using AND.
+  1: [USE-VALUE  ] Use specified value.
+  2: [STORE-VALUE] Set specified value and use it.
+  3: [ABORT      ] Reduce debugger level (to debug level 1).
+  4:               Exit debugger, returning to top level.
+
+((LAMBDA (#:G370)) #<unused argument>)
+   source: (LIST 2 AND 2 IS 4)
+0[2] (list 2 'and 2 'is 4)
+
+(2 AND 2 IS 4)
+0[2] (+ 1 ’(length (list t t t t)))
+; in: THIRD (THE QUICK BROWN FOX)
+;     (+ 1 ’ (LENGTH (LIST T T T T)))
+; --> + 
+; ==>
+;   (+ 1 ’)
+; 
+; caught WARNING:
+;   undefined variable: COMMON-LISP-USER::’
+; 
+; compilation unit finished
+;   Undefined variable:
+;     ’
+;   caught 1 WARNING condition
+
+debugger invoked on a UNBOUND-VARIABLE in thread
+#<THREAD "main thread" RUNNING {1000560083}>:
+  The variable ’ is unbound.
+
+Type HELP for debugger help, or (SB-EXT:EXIT) to exit from SBCL.
+
+restarts (invokable by number or by possibly-abbreviated name):
+  0: [CONTINUE   ] Retry using ’.
+  1: [USE-VALUE  ] Use specified value.
+  2: [STORE-VALUE] Set specified value and use it.
+  3: [ABORT      ] Reduce debugger level (to debug level 2).
+  4:               Reduce debugger level (to debug level 1).
+  5:               Exit debugger, returning to top level.
+
+((LAMBDA (#:G372)) #<unused argument>)
+   source: (+ 1 ’ (LENGTH (LIST T T T T)))
+0[3] (+ 1 (length (list t t t t)))
+
+5
+0[3] (cons ’patrick (seymour marvin))
+; in: THIRD (THE QUICK BROWN FOX)
+;     (SEYMOUR MARVIN)
+; 
+; caught WARNING:
+;   undefined variable: COMMON-LISP-USER::MARVIN
+; 
+; caught STYLE-WARNING:
+;   undefined function: COMMON-LISP-USER::SEYMOUR
+
+;     (CONS ’PATRICK (SEYMOUR MARVIN))
+; 
+; caught WARNING:
+;   undefined variable: COMMON-LISP-USER::’PATRICK
+; 
+; compilation unit finished
+;   Undefined function:
+;     SEYMOUR
+;   Undefined variables:
+;     MARVIN ’PATRICK
+;   caught 2 WARNING conditions
+;   caught 1 STYLE-WARNING condition
+
+debugger invoked on a UNBOUND-VARIABLE in thread
+#<THREAD "main thread" RUNNING {1000560083}>:
+  The variable ’PATRICK is unbound.
+
+Type HELP for debugger help, or (SB-EXT:EXIT) to exit from SBCL.
+
+restarts (invokable by number or by possibly-abbreviated name):
+  0: [CONTINUE   ] Retry using ’PATRICK.
+  1: [USE-VALUE  ] Use specified value.
+  2: [STORE-VALUE] Set specified value and use it.
+  3: [ABORT      ] Reduce debugger level (to debug level 3).
+  4:               Reduce debugger level (to debug level 2).
+  5:               Reduce debugger level (to debug level 1).
+  6:               Exit debugger, returning to top level.
+
+((LAMBDA (#:G374)) #<unused argument>)
+   source: (CONS ’PATRICK (SEYMOUR MARVIN))
+0[4] (cons 'patrick '(seymour marvin))
+
+(PATRICK SEYMOUR MARVIN)
+0[4] (cons ’patrick (list seymour marvin))
+; in: THIRD (THE QUICK BROWN FOX)
+;     (LIST SEYMOUR MARVIN)
+; 
+; caught WARNING:
+;   undefined variable: COMMON-LISP-USER::MARVIN
+; 
+; caught WARNING:
+;   undefined variable: COMMON-LISP-USER::SEYMOUR
+
+;     (CONS ’PATRICK (LIST SEYMOUR MARVIN))
+; 
+; caught WARNING:
+;   undefined variable: COMMON-LISP-USER::’PATRICK
+; 
+; compilation unit finished
+;   Undefined variables:
+;     MARVIN SEYMOUR ’PATRICK
+;   caught 3 WARNING conditions
+
+debugger invoked on a UNBOUND-VARIABLE in thread
+#<THREAD "main thread" RUNNING {1000560083}>:
+  The variable ’PATRICK is unbound.
+
+Type HELP for debugger help, or (SB-EXT:EXIT) to exit from SBCL.
+
+restarts (invokable by number or by possibly-abbreviated name):
+  0: [CONTINUE   ] Retry using ’PATRICK.
+  1: [USE-VALUE  ] Use specified value.
+  2: [STORE-VALUE] Set specified value and use it.
+  3: [ABORT      ] Reduce debugger level (to debug level 4).
+  4:               Reduce debugger level (to debug level 3).
+  5:               Reduce debugger level (to debug level 2).
+  6:               Reduce debugger level (to debug level 1).
+  7:               Exit debugger, returning to top level.
+
+((LAMBDA (#:G376)) #<unused argument>)
+   source: (CONS ’PATRICK (LIST SEYMOUR MARVIN))
+0[5] (cons 'patrick (list 'seymour 'marvin))
+
+(PATRICK SEYMOUR MARVIN)
+0[5] (defun mystery (x) (list (second x) (first x)))
+
+MYSTERY
+0[5] (mystery ’(dancing bear))
+; in: THIRD (THE QUICK BROWN FOX)
+;     (MYSTERY ’ (DANCING BEAR))
+; 
+; caught STYLE-WARNING:
+;   The function MYSTERY is called with two arguments, but wants exactly one.
+; in: THIRD (THE QUICK BROWN FOX)
+;     (DANCING BEAR)
+; 
+; caught WARNING:
+;   undefined variable: COMMON-LISP-USER::BEAR
+; 
+; caught STYLE-WARNING:
+;   undefined function: COMMON-LISP-USER::DANCING
+
+;     (MYSTERY ’ (DANCING BEAR))
+; 
+; caught WARNING:
+;   undefined variable: COMMON-LISP-USER::’
+; 
+; compilation unit finished
+;   Undefined function:
+;     DANCING
+;   Undefined variables:
+;     BEAR ’
+;   caught 2 WARNING conditions
+;   caught 2 STYLE-WARNING conditions
+
+debugger invoked on a UNBOUND-VARIABLE in thread
+#<THREAD "main thread" RUNNING {1000560083}>:
+  The variable ’ is unbound.
+
+Type HELP for debugger help, or (SB-EXT:EXIT) to exit from SBCL.
+
+restarts (invokable by number or by possibly-abbreviated name):
+  0: [CONTINUE   ] Retry using ’.
+  1: [USE-VALUE  ] Use specified value.
+  2: [STORE-VALUE] Set specified value and use it.
+  3: [ABORT      ] Reduce debugger level (to debug level 5).
+  4:               Reduce debugger level (to debug level 4).
+  5:               Reduce debugger level (to debug level 3).
+  6:               Reduce debugger level (to debug level 2).
+  7:               Reduce debugger level (to debug level 1).
+  8:               Exit debugger, returning to top level.
+
+((LAMBDA (#:G379)) #<unused argument>)
+   source: (MYSTERY ’ (DANCING BEAR))
+0[6] (mystery ’dancing ’bear)
+Help! 11 nested errors. SB-KERNEL:*MAXIMUM-ERROR-DEPTH* exceeded.
+Backtrace for: #<SB-THREAD:THREAD "main thread" RUNNING {1000560083}>
+0: ((LAMBDA (#:G379)) #<unused argument>)
+1: (INTERACTIVE-EVAL (MYSTERY ’ (DANCING BEAR)) :EVAL #<FUNCTION SB-DEBUG::DEBUG-EVAL>)
+2: (SB-DEBUG::DEBUG-EVAL-PRINT (MYSTERY ’ (DANCING BEAR)))
+3: (SB-DEBUG::DEBUG-LOOP-FUN)
+4: (INTERNAL-DEBUG)
+5: ((FLET DEBUG :IN SB-DEBUG::%INVOKE-DEBUGGER))
+6: (SB-DEBUG::%INVOKE-DEBUGGER #<UNBOUND-VARIABLE ’PATRICK {10019909F3}>)
+7: ((FLET "LAMBDA0" :IN "SYS:SRC;CODE;DEBUG.LISP"))
+8: (SB-IMPL::CALL-WITH-SANE-IO-SYNTAX #<CLOSURE (FLET "LAMBDA0" :IN "SYS:SRC;CODE;DEBUG.LISP") {7F864CF3B1AB}>)
+9: ((FLET "THUNK" :IN SB-DEBUG::FUNCALL-WITH-DEBUG-IO-SYNTAX))
+10: (SB-IMPL::%WITH-STANDARD-IO-SYNTAX #<CLOSURE (FLET "THUNK" :IN SB-DEBUG::FUNCALL-WITH-DEBUG-IO-SYNTAX) {7F864CF3B27B}>)
+11: (SB-DEBUG::FUNCALL-WITH-DEBUG-IO-SYNTAX #<FUNCTION SB-DEBUG::%INVOKE-DEBUGGER> #<UNBOUND-VARIABLE ’PATRICK {10019909F3}>)
+12: (INVOKE-DEBUGGER #<UNBOUND-VARIABLE ’PATRICK {10019909F3}>)
+13: (ERROR #<UNBOUND-VARIABLE ’PATRICK {10019909F3}>)
+14: (SB-KERNEL:WITH-SIMPLE-CONDITION-RESTARTS ERROR NIL #<UNBOUND-VARIABLE ’PATRICK {10019909F3}>)
+15: ((LABELS SB-KERNEL::TRY :IN SB-KERNEL::RESTART-UNBOUND) #<UNBOUND-VARIABLE ’PATRICK {10019909F3}>)
+16: (SB-KERNEL::RESTART-UNBOUND ’PATRICK #<UNBOUND-VARIABLE ’PATRICK {10019909F3}> -5463)
+17: (SB-KERNEL:INTERNAL-ERROR #.(SB-SYS:INT-SAP #X7F864CF3B900) #<unused argument>)
+18: ("foreign function: call_into_lisp")
+19: ("foreign function: funcall2")
+20: ("foreign function: interrupt_internal_error")
+21: ("foreign function: handle_trap")
+22: ("foreign function: #x418812")
+23: ((LAMBDA (#:G376)) #<unused argument>)
+24: (INTERACTIVE-EVAL (CONS ’PATRICK (LIST SEYMOUR MARVIN)) :EVAL #<FUNCTION SB-DEBUG::DEBUG-EVAL>)
+25: (SB-DEBUG::DEBUG-EVAL-PRINT (CONS ’PATRICK (LIST SEYMOUR MARVIN)))
+26: (SB-DEBUG::DEBUG-LOOP-FUN)
+27: (INTERNAL-DEBUG)
+28: ((FLET DEBUG :IN SB-DEBUG::%INVOKE-DEBUGGER))
+29: (SB-DEBUG::%INVOKE-DEBUGGER #<UNBOUND-VARIABLE ’PATRICK {1001952BB3}>)
+30: ((FLET "LAMBDA0" :IN "SYS:SRC;CODE;DEBUG.LISP"))
+31: (SB-IMPL::CALL-WITH-SANE-IO-SYNTAX #<CLOSURE (FLET "LAMBDA0" :IN "SYS:SRC;CODE;DEBUG.LISP") {7F864CF3C2AB}>)
+32: ((FLET "THUNK" :IN SB-DEBUG::FUNCALL-WITH-DEBUG-IO-SYNTAX))
+33: (SB-IMPL::%WITH-STANDARD-IO-SYNTAX #<CLOSURE (FLET "THUNK" :IN SB-DEBUG::FUNCALL-WITH-DEBUG-IO-SYNTAX) {7F864CF3C37B}>)
+34: (SB-DEBUG::FUNCALL-WITH-DEBUG-IO-SYNTAX #<FUNCTION SB-DEBUG::%INVOKE-DEBUGGER> #<UNBOUND-VARIABLE ’PATRICK {1001952BB3}>)
+35: (INVOKE-DEBUGGER #<UNBOUND-VARIABLE ’PATRICK {1001952BB3}>)
+36: (ERROR #<UNBOUND-VARIABLE ’PATRICK {1001952BB3}>)
+37: (SB-KERNEL:WITH-SIMPLE-CONDITION-RESTARTS ERROR NIL #<UNBOUND-VARIABLE ’PATRICK {1001952BB3}>)
+38: ((LABELS SB-KERNEL::TRY :IN SB-KERNEL::RESTART-UNBOUND) #<UNBOUND-VARIABLE ’PATRICK {1001952BB3}>)
+39: (SB-KERNEL::RESTART-UNBOUND ’PATRICK #<UNBOUND-VARIABLE ’PATRICK {1001952BB3}> -3706)
+40: (SB-KERNEL:INTERNAL-ERROR #.(SB-SYS:INT-SAP #X7F864CF3CA00) #<unused argument>)
+41: ("foreign function: call_into_lisp")
+42: ("foreign function: funcall2")
+43: ("foreign function: interrupt_internal_error")
+44: ("foreign function: handle_trap")
+45: ("foreign function: #x418812")
+46: ((LAMBDA (#:G374)) #<unused argument>)
+47: (INTERACTIVE-EVAL (CONS ’PATRICK (SEYMOUR MARVIN)) :EVAL #<FUNCTION SB-DEBUG::DEBUG-EVAL>)
+48: (SB-DEBUG::DEBUG-EVAL-PRINT (CONS ’PATRICK (SEYMOUR MARVIN)))
+49: (SB-DEBUG::DEBUG-LOOP-FUN)
+50: (INTERNAL-DEBUG)
+51: ((FLET DEBUG :IN SB-DEBUG::%INVOKE-DEBUGGER))
+52: (SB-DEBUG::%INVOKE-DEBUGGER #<UNBOUND-VARIABLE ’ {10019136F3}>)
+53: ((FLET "LAMBDA0" :IN "SYS:SRC;CODE;DEBUG.LISP"))
+54: (SB-IMPL::CALL-WITH-SANE-IO-SYNTAX #<CLOSURE (FLET "LAMBDA0" :IN "SYS:SRC;CODE;DEBUG.LISP") {7F864CF3D3AB}>)
+55: ((FLET "THUNK" :IN SB-DEBUG::FUNCALL-WITH-DEBUG-IO-SYNTAX))
+56: (SB-IMPL::%WITH-STANDARD-IO-SYNTAX #<CLOSURE (FLET "THUNK" :IN SB-DEBUG::FUNCALL-WITH-DEBUG-IO-SYNTAX) {7F864CF3D47B}>)
+57: (SB-DEBUG::FUNCALL-WITH-DEBUG-IO-SYNTAX #<FUNCTION SB-DEBUG::%INVOKE-DEBUGGER> #<UNBOUND-VARIABLE ’ {10019136F3}>)
+58: (INVOKE-DEBUGGER #<UNBOUND-VARIABLE ’ {10019136F3}>)
+59: (ERROR #<UNBOUND-VARIABLE ’ {10019136F3}>)
+60: (SB-KERNEL:WITH-SIMPLE-CONDITION-RESTARTS ERROR NIL #<UNBOUND-VARIABLE ’ {10019136F3}>)
+61: ((LABELS SB-KERNEL::TRY :IN SB-KERNEL::RESTART-UNBOUND) #<UNBOUND-VARIABLE ’ {10019136F3}>)
+62: (SB-KERNEL::RESTART-UNBOUND ’ #<UNBOUND-VARIABLE ’ {10019136F3}> -5374)
+63: (SB-KERNEL:INTERNAL-ERROR #.(SB-SYS:INT-SAP #X7F864CF3DB00) #<unused argument>)
+64: ("foreign function: call_into_lisp")
+65: ("foreign function: funcall2")
+66: ("foreign function: interrupt_internal_error")
+67: ("foreign function: handle_trap")
+68: ("foreign function: #x418812")
+69: ((LAMBDA (#:G372)) #<unused argument>)
+70: (INTERACTIVE-EVAL (+ 1 ’ (LENGTH (LIST T T T T))) :EVAL #<FUNCTION SB-DEBUG::DEBUG-EVAL>)
+71: (SB-DEBUG::DEBUG-EVAL-PRINT (+ 1 ’ (LENGTH (LIST T T T T))))
+72: (SB-DEBUG::DEBUG-LOOP-FUN)
+73: (INTERNAL-DEBUG)
+74: ((FLET DEBUG :IN SB-DEBUG::%INVOKE-DEBUGGER))
+75: (SB-DEBUG::%INVOKE-DEBUGGER #<UNBOUND-VARIABLE AND {10018D3513}>)
+76: ((FLET "LAMBDA0" :IN "SYS:SRC;CODE;DEBUG.LISP"))
+77: (SB-IMPL::CALL-WITH-SANE-IO-SYNTAX #<CLOSURE (FLET "LAMBDA0" :IN "SYS:SRC;CODE;DEBUG.LISP") {7F864CF3E4AB}>)
+78: ((FLET "THUNK" :IN SB-DEBUG::FUNCALL-WITH-DEBUG-IO-SYNTAX))
+79: (SB-IMPL::%WITH-STANDARD-IO-SYNTAX #<CLOSURE (FLET "THUNK" :IN SB-DEBUG::FUNCALL-WITH-DEBUG-IO-SYNTAX) {7F864CF3E57B}>)
+80: (SB-DEBUG::FUNCALL-WITH-DEBUG-IO-SYNTAX #<FUNCTION SB-DEBUG::%INVOKE-DEBUGGER> #<UNBOUND-VARIABLE AND {10018D3513}>)
+81: (INVOKE-DEBUGGER #<UNBOUND-VARIABLE AND {10018D3513}>)
+82: (ERROR #<UNBOUND-VARIABLE AND {10018D3513}>)
+83: (SB-KERNEL:WITH-SIMPLE-CONDITION-RESTARTS ERROR NIL #<UNBOUND-VARIABLE AND {10018D3513}>)
+84: ((LABELS SB-KERNEL::TRY :IN SB-KERNEL::RESTART-UNBOUND) #<UNBOUND-VARIABLE AND {10018D3513}>)
+85: (SB-KERNEL::RESTART-UNBOUND AND #<UNBOUND-VARIABLE AND {10018D3513}> -4217)
+86: (SB-KERNEL:INTERNAL-ERROR #.(SB-SYS:INT-SAP #X7F864CF3EC00) #<unused argument>)
+87: ("foreign function: call_into_lisp")
+88: ("foreign function: funcall2")
+89: ("foreign function: interrupt_internal_error")
+90: ("foreign function: handle_trap")
+91: ("foreign function: #x418812")
+92: ((LAMBDA (#:G370)) #<unused argument>)
+93: (INTERACTIVE-EVAL (LIST 2 AND 2 IS 4) :EVAL #<FUNCTION SB-DEBUG::DEBUG-EVAL>)
+94: (SB-DEBUG::DEBUG-EVAL-PRINT (LIST 2 AND 2 IS 4))
+95: (SB-DEBUG::DEBUG-LOOP-FUN)
+96: (INTERNAL-DEBUG)
+97: ((FLET DEBUG :IN SB-DEBUG::%INVOKE-DEBUGGER))
+98: (SB-DEBUG::%INVOKE-DEBUGGER #<SB-INT:COMPILED-PROGRAM-ERROR {1001899E03}>)
+99: ((FLET "LAMBDA0" :IN "SYS:SRC;CODE;DEBUG.LISP"))
+100: (SB-IMPL::CALL-WITH-SANE-IO-SYNTAX #<CLOSURE (FLET "LAMBDA0" :IN "SYS:SRC;CODE;DEBUG.LISP") {7F864CF3F58B}>)
+101: ((FLET "THUNK" :IN SB-DEBUG::FUNCALL-WITH-DEBUG-IO-SYNTAX))
+102: (SB-IMPL::%WITH-STANDARD-IO-SYNTAX #<CLOSURE (FLET "THUNK" :IN SB-DEBUG::FUNCALL-WITH-DEBUG-IO-SYNTAX) {7F864CF3F65B}>)
+103: (SB-DEBUG::FUNCALL-WITH-DEBUG-IO-SYNTAX #<FUNCTION SB-DEBUG::%INVOKE-DEBUGGER> #<SB-INT:COMPILED-PROGRAM-ERROR {1001899E03}>)
+104: (INVOKE-DEBUGGER #<SB-INT:COMPILED-PROGRAM-ERROR {1001899E03}>)
+105: (ERROR SB-INT:COMPILED-PROGRAM-ERROR :MESSAGE "Error while parsing arguments to special operator THE:
+  too many elements in
+    (QUICK BROWN FOX)
+  to satisfy lambda list
+    (SB-C::VALUE-TYPE SB-KERNEL:FORM):
+  exactly 2 expected, but got 3" :SOURCE "(THE QUICK BROWN FOX)")
+106: ((LAMBDA ()))
+107: (SB-INT:SIMPLE-EVAL-IN-LEXENV (THE QUICK BROWN FOX) #<NULL-LEXENV>)
+108: (SB-INT:SIMPLE-EVAL-IN-LEXENV (THIRD (THE QUICK BROWN FOX)) #<NULL-LEXENV>)
+109: (EVAL (THIRD (THE QUICK BROWN FOX)))
+110: (INTERACTIVE-EVAL (THIRD (THE QUICK BROWN FOX)) :EVAL NIL)
+111: (SB-IMPL::REPL-FUN NIL)
+112: ((FLET "LAMBDA0" :IN "SYS:SRC;CODE;TOPLEVEL.LISP"))
+113: (SB-IMPL::%WITH-REBOUND-IO-SYNTAX #<CLOSURE (FLET "LAMBDA0" :IN "SYS:SRC;CODE;TOPLEVEL.LISP") {7F864CF3FB7B}>)
+114: (SB-IMPL::TOPLEVEL-REPL NIL)
+115: (SB-IMPL::TOPLEVEL-INIT)
+116: ((FLET SB-UNIX::BODY :IN SAVE-LISP-AND-DIE))
+117: ((FLET "WITHOUT-INTERRUPTS-BODY-14" :IN SAVE-LISP-AND-DIE))
+118: ((LABELS SB-IMPL::RESTART-LISP :IN SAVE-LISP-AND-DIE))
+
+debugger invoked on a SIMPLE-ERROR in thread #<THREAD "main thread" RUNNING {1000560083}>: Maximum error nesting depth exceeded
+
+Type HELP for debugger help, or (SB-EXT:EXIT) to exit from SBCL.
+
+restarts (invokable by number or by possibly-abbreviated name):
+  0: [ABORT] Reduce debugger level (to debug level 6).
+  1:         Reduce debugger level (to debug level 5).
+  2:         Reduce debugger level (to debug level 4).
+  3:         Reduce debugger level (to debug level 3).
+  4:         Reduce debugger level (to debug level 2).
+  5:         Reduce debugger level (to debug level 1).
+  6:         Exit debugger, returning to top level.
+
+(INVOKE-DEBUGGER #<SIMPLE-ERROR "Maximum error nesting depth exceeded" {1001AAF393}>)
+0[7] (mystery '(dancing bear))
+
+(BEAR DANCING)
+0[7] (mystery ’(zowie))
+Help! ERROR-ERROR is 2 levels deep. Will try to reset the IO streams and disable debugger hooks.
+Help! 11 nested errors. SB-KERNEL:*MAXIMUM-ERROR-DEPTH* exceeded.
+Backtrace for: #<SB-THREAD:THREAD "main thread" RUNNING {1000560083}>
+0: (INVOKE-DEBUGGER #<SIMPLE-ERROR "Maximum error nesting depth exceeded" {1001AAF393}>)
+1: ((FLET SB-IMPL::TRY-TO-INVOKE-DEBUGGER :IN SB-IMPL::ERROR-ERROR))
+2: ((FLET "THUNK" :IN SB-IMPL::ERROR-ERROR))
+3: (SB-IMPL::%WITH-STANDARD-IO-SYNTAX #<CLOSURE (FLET "THUNK" :IN SB-IMPL::ERROR-ERROR) {7F864CF3925B}>)
+4: (SB-IMPL::ERROR-ERROR "Help! " 11 " nested errors. " "SB-KERNEL:*MAXIMUM-ERROR-DEPTH* exceeded.")
+5: ((FLET SB-KERNEL::%WARN :IN "SYS:SRC;CODE;WARM-ERROR.LISP") "The function ~S is called~@[ by ~S~] with ~R argument~:P, but wants exactly ~R." #<SB-KERNEL::CONDITION-CLASSOID STYLE-WARNING> SB-INT:SIMPLE-STYLE-WARNING MYSTERY NIL 2 1)
+6: (SB-C:COMPILER-STYLE-WARN "The function ~S is called~@[ by ~S~] with ~R argument~:P, but wants exactly ~R." MYSTERY NIL 2 1)
+7: (SB-C::NOTE-LOSSAGE "The function ~S is called~@[ by ~S~] with ~R argument~:P, but wants exactly ~R." MYSTERY NIL 2 1)
+8: ((FLET SB-C::LOSE :IN SB-C::REPORT-ARG-COUNT-MISMATCH) "The function ~S is called~@[ by ~S~] with ~R argument~:P, but wants exactly ~R." MYSTERY NIL 2 1)
+9: (SB-C::REPORT-ARG-COUNT-MISMATCH MYSTERY NIL #<SB-KERNEL:FUN-TYPE (FUNCTION (T) (VALUES CONS &OPTIONAL))> 2 NIL :LOSSAGE-FUN #<FUNCTION SB-C::NOTE-LOSSAGE>)
+10: (SB-C::VALID-FUN-USE #<SB-C::COMBINATION :FUN #<SB-C::REF  :LEAF #<SB-C::GLOBAL-VAR :%SOURCE-NAME MYSTERY :TYPE #<SB-KERNEL:BUILT-IN-CLASSOID FUNCTION (read-only)> :DEFINED-TYPE #<SB-KERNEL:FUN-TYPE (FUNCTION (T) (VALUES CONS &OPTIONAL))> :WHERE-FROM :DEFINED :KIND :GLOBAL-FUNCTION {1001A18073}> {1001A181C3}> :ARGS (#<SB-C::COMBINATION :FUN #<SB-C::REF  :LEAF #1=#<SB-C::GLOBAL-VAR :%SOURCE-NAME SB-KERNEL:SYMEVAL :TYPE #2=#<SB-KERNEL:FUN-TYPE #> :DEFINED-TYPE #2# :WHERE-FROM :DECLARED :KIND :GLOBAL-FUNCTION {1001A18583}> {1001A186D3}> :ARGS (#<SB-C::REF  :LEAF # {1001A189D3}>) {1001A18753}> #<SB-C::COMBINATION :FUN #<SB-C::REF  :LEAF #1# {1001A190B3}> :ARGS (#<SB-C::REF  :LEAF # {1001A193B3}>) {1001A19133}>) {1001A18243}> #<SB-KERNEL:FUN-TYPE (FUNCTION (T) (VALUES CONS &OPTIONAL))> :ARGUMENT-TEST NIL :RESULT-TEST NIL :LOSSAGE-FUN #<FUNCTION SB-C:COMPILER-STYLE-WARN> :UNWINNAGE-FUN #<FUNCTION SB-C:COMPILER-NOTIFY>)
+11: (SB-C::VALIDATE-CALL-TYPE #<SB-C::COMBINATION :FUN #<SB-C::REF  :LEAF #<SB-C::GLOBAL-VAR :%SOURCE-NAME MYSTERY :TYPE #<SB-KERNEL:BUILT-IN-CLASSOID FUNCTION (read-only)> :DEFINED-TYPE #<SB-KERNEL:FUN-TYPE (FUNCTION (T) (VALUES CONS &OPTIONAL))> :WHERE-FROM :DEFINED :KIND :GLOBAL-FUNCTION {1001A18073}> {1001A181C3}> :ARGS (#<SB-C::COMBINATION :FUN #<SB-C::REF  :LEAF #1=#<SB-C::GLOBAL-VAR :%SOURCE-NAME SB-KERNEL:SYMEVAL :TYPE #2=#<SB-KERNEL:FUN-TYPE #> :DEFINED-TYPE #2# :WHERE-FROM :DECLARED :KIND :GLOBAL-FUNCTION {1001A18583}> {1001A186D3}> :ARGS (#<SB-C::REF  :LEAF # {1001A189D3}>) {1001A18753}> #<SB-C::COMBINATION :FUN #<SB-C::REF  :LEAF #1# {1001A190B3}> :ARGS (#<SB-C::REF  :LEAF # {1001A193B3}>) {1001A19133}>) {1001A18243}> #<SB-KERNEL:BUILT-IN-CLASSOID FUNCTION (read-only)> #<SB-C::GLOBAL-VAR :%SOURCE-NAME MYSTERY :TYPE #<SB-KERNEL:BUILT-IN-CLASSOID FUNCTION (read-only)> :DEFINED-TYPE #<SB-KERNEL:FUN-TYPE (FUNCTION (T) (VALUES CONS &OPTIONAL))> :WHERE-FROM :DEFINED :KIND :GLOBAL-FUNCTION {1001A18073}> NIL)
+12: (SB-C::IR1-OPTIMIZE-COMBINATION #<SB-C::COMBINATION :FUN #<SB-C::REF  :LEAF #<SB-C::GLOBAL-VAR :%SOURCE-NAME MYSTERY :TYPE #<SB-KERNEL:BUILT-IN-CLASSOID FUNCTION (read-only)> :DEFINED-TYPE #<SB-KERNEL:FUN-TYPE (FUNCTION (T) (VALUES CONS &OPTIONAL))> :WHERE-FROM :DEFINED :KIND :GLOBAL-FUNCTION {1001A18073}> {1001A181C3}> :ARGS (#<SB-C::COMBINATION :FUN #<SB-C::REF  :LEAF #1=#<SB-C::GLOBAL-VAR :%SOURCE-NAME SB-KERNEL:SYMEVAL :TYPE #2=#<SB-KERNEL:FUN-TYPE #> :DEFINED-TYPE #2# :WHERE-FROM :DECLARED :KIND :GLOBAL-FUNCTION {1001A18583}> {1001A186D3}> :ARGS (#<SB-C::REF  :LEAF # {1001A189D3}>) {1001A18753}> #<SB-C::COMBINATION :FUN #<SB-C::REF  :LEAF #1# {1001A190B3}> :ARGS (#<SB-C::REF  :LEAF # {1001A193B3}>) {1001A19133}>) {1001A18243}>)
+13: (SB-C::IR1-OPTIMIZE-BLOCK #<SB-C::CBLOCK 3 :START c1 {1001A17E23}>)
+14: (SB-C::IR1-OPTIMIZE #<SB-C:COMPONENT :NAME (LAMBDA (#:G380)) {1001A1AE13}> NIL)
+15: (SB-C::IR1-OPTIMIZE-UNTIL-DONE #<SB-C:COMPONENT :NAME (LAMBDA (#:G380)) {1001A1AE13}>)
+16: (SB-C::IR1-OPTIMIZE-PHASE-1 #<SB-C:COMPONENT :NAME (LAMBDA (#:G380)) {1001A1AE13}>)
+17: (SB-C::IR1-PHASES #<SB-C:COMPONENT :NAME (LAMBDA (#:G380)) {1001A1AE13}>)
+18: (SB-C::COMPILE-COMPONENT #<SB-C:COMPONENT :NAME (LAMBDA (#:G380)) {1001A1AE13}>)
+19: (SB-C::%COMPILE (LAMBDA (#1=#:G380) (DECLARE (IGNORABLE #1#)) (PROGN (MYSTERY ’DANCING ’BEAR))) #<SB-C::CORE-OBJECT {1001A166E3}> :NAME NIL :PATH (SB-C::ORIGINAL-SOURCE-START 0 0))
+20: ((FLET "LAMBDA0" :IN "SYS:SRC;COMPILER;TARGET-MAIN.LISP"))
+21: ((FLET SB-C::WITH-IT :IN SB-C::%WITH-COMPILATION-UNIT))
+22: (SB-C:COMPILE-IN-LEXENV (LAMBDA (#1=#:G380) (DECLARE (IGNORABLE #1#)) (PROGN (MYSTERY ’DANCING ’BEAR))) #S(SB-KERNEL:LEXENV :FUNS NIL :VARS NIL :BLOCKS NIL :TAGS NIL :TYPE-RESTRICTIONS NIL :LAMBDA NIL :CLEANUP NIL :HANDLED-CONDITIONS NIL :DISABLED-PACKAGE-LOCKS NIL :%POLICY #<SB-C:POLICY ((INHIBIT-WARNINGS 1) (SPEED 1) (SPACE 1) (SAFETY 1) (DEBUG 1) (COMPILATION-SPEED 1))> :USER-DATA NIL :PARENT #<NULL-LEXENV> ...) NIL NIL NIL NIL T)
+23: (SB-IMPL::%SIMPLE-EVAL (LAMBDA (#1=#:G380) (DECLARE (IGNORABLE #1#)) (PROGN (MYSTERY ’DANCING ’BEAR))) #S(SB-KERNEL:LEXENV :FUNS NIL :VARS NIL :BLOCKS NIL :TAGS NIL :TYPE-RESTRICTIONS NIL :LAMBDA NIL :CLEANUP NIL :HANDLED-CONDITIONS NIL :DISABLED-PACKAGE-LOCKS NIL :%POLICY #<SB-C:POLICY ((INHIBIT-WARNINGS 1) (SPEED 1) (SPACE 1) (SAFETY 1) (DEBUG 1) (COMPILATION-SPEED 1))> :USER-DATA NIL :PARENT #<NULL-LEXENV> ...))
+24: (SB-INT:SIMPLE-EVAL-IN-LEXENV (LAMBDA (#1=#:G380) (DECLARE (IGNORABLE #1#)) (PROGN (MYSTERY ’DANCING ’BEAR))) #S(SB-KERNEL:LEXENV :FUNS NIL :VARS NIL :BLOCKS NIL :TAGS NIL :TYPE-RESTRICTIONS NIL :LAMBDA NIL :CLEANUP NIL :HANDLED-CONDITIONS NIL :DISABLED-PACKAGE-LOCKS NIL :%POLICY #<SB-C:POLICY ((INHIBIT-WARNINGS 1) (SPEED 1) (SPACE 1) (SAFETY 1) (DEBUG 1) (COMPILATION-SPEED 1))> :USER-DATA NIL :PARENT #<NULL-LEXENV> ...))
+25: (SB-C::%FUNCALL-IN-FOOMACROLET-LEXENV #<CLOSURE (LAMBDA (SB-C::DEFINITION) :IN SB-C::SYMBOL-MACROLET-DEFINITIONIZE-FUN) {1001A1529B}> :VARS NIL #<CLOSURE (LAMBDA (&OPTIONAL SB-DI::VARS) :IN SB-DI:PREPROCESS-FOR-EVAL) {1001A1527B}>)
+26: (SB-DI:PREPROCESS-FOR-EVAL (MYSTERY ’DANCING ’BEAR) #<SB-DI::COMPILED-CODE-LOCATION (LAMBDA (#:G379))>)
+27: (SB-DI:EVAL-IN-FRAME #<SB-DI::COMPILED-FRAME (LAMBDA (#:G379)), interrupted> (MYSTERY ’DANCING ’BEAR))
+28: (INTERACTIVE-EVAL (MYSTERY ’DANCING ’BEAR) :EVAL #<FUNCTION SB-DEBUG::DEBUG-EVAL>)
+29: (SB-DEBUG::DEBUG-EVAL-PRINT (MYSTERY ’DANCING ’BEAR))
+30: (SB-DEBUG::DEBUG-LOOP-FUN)
+31: (INTERNAL-DEBUG)
+32: ((FLET DEBUG :IN SB-DEBUG::%INVOKE-DEBUGGER))
+33: (SB-DEBUG::%INVOKE-DEBUGGER #<UNBOUND-VARIABLE ’ {1001A090E3}>)
+34: ((FLET "LAMBDA0" :IN "SYS:SRC;CODE;DEBUG.LISP"))
+35: (SB-IMPL::CALL-WITH-SANE-IO-SYNTAX #<CLOSURE (FLET "LAMBDA0" :IN "SYS:SRC;CODE;DEBUG.LISP") {7F864CF3A0AB}>)
+36: ((FLET "THUNK" :IN SB-DEBUG::FUNCALL-WITH-DEBUG-IO-SYNTAX))
+37: (SB-IMPL::%WITH-STANDARD-IO-SYNTAX #<CLOSURE (FLET "THUNK" :IN SB-DEBUG::FUNCALL-WITH-DEBUG-IO-SYNTAX) {7F864CF3A17B}>)
+38: (SB-DEBUG::FUNCALL-WITH-DEBUG-IO-SYNTAX #<FUNCTION SB-DEBUG::%INVOKE-DEBUGGER> #<UNBOUND-VARIABLE ’ {1001A090E3}>)
+39: (INVOKE-DEBUGGER #<UNBOUND-VARIABLE ’ {1001A090E3}>)
+40: (ERROR #<UNBOUND-VARIABLE ’ {1001A090E3}>)
+41: (SB-KERNEL:WITH-SIMPLE-CONDITION-RESTARTS ERROR NIL #<UNBOUND-VARIABLE ’ {1001A090E3}>)
+42: ((LABELS SB-KERNEL::TRY :IN SB-KERNEL::RESTART-UNBOUND) #<UNBOUND-VARIABLE ’ {1001A090E3}>)
+43: (SB-KERNEL::RESTART-UNBOUND ’ #<UNBOUND-VARIABLE ’ {1001A090E3}> -2746)
+44: (SB-KERNEL:INTERNAL-ERROR #.(SB-SYS:INT-SAP #X7F864CF3A800) #<unused argument>)
+45: ("foreign function: call_into_lisp")
+46: ("foreign function: funcall2")
+47: ("foreign function: interrupt_internal_error")
+48: ("foreign function: handle_trap")
+49: ("foreign function: #x418812")
+50: ((LAMBDA (#:G379)) #<unused argument>)
+51: (INTERACTIVE-EVAL (MYSTERY ’ (DANCING BEAR)) :EVAL #<FUNCTION SB-DEBUG::DEBUG-EVAL>)
+52: (SB-DEBUG::DEBUG-EVAL-PRINT (MYSTERY ’ (DANCING BEAR)))
+53: (SB-DEBUG::DEBUG-LOOP-FUN)
+54: (INTERNAL-DEBUG)
+55: ((FLET DEBUG :IN SB-DEBUG::%INVOKE-DEBUGGER))
+56: (SB-DEBUG::%INVOKE-DEBUGGER #<UNBOUND-VARIABLE ’PATRICK {10019909F3}>)
+57: ((FLET "LAMBDA0" :IN "SYS:SRC;CODE;DEBUG.LISP"))
+58: (SB-IMPL::CALL-WITH-SANE-IO-SYNTAX #<CLOSURE (FLET "LAMBDA0" :IN "SYS:SRC;CODE;DEBUG.LISP") {7F864CF3B1AB}>)
+59: ((FLET "THUNK" :IN SB-DEBUG::FUNCALL-WITH-DEBUG-IO-SYNTAX))
+60: (SB-IMPL::%WITH-STANDARD-IO-SYNTAX #<CLOSURE (FLET "THUNK" :IN SB-DEBUG::FUNCALL-WITH-DEBUG-IO-SYNTAX) {7F864CF3B27B}>)
+61: (SB-DEBUG::FUNCALL-WITH-DEBUG-IO-SYNTAX #<FUNCTION SB-DEBUG::%INVOKE-DEBUGGER> #<UNBOUND-VARIABLE ’PATRICK {10019909F3}>)
+62: (INVOKE-DEBUGGER #<UNBOUND-VARIABLE ’PATRICK {10019909F3}>)
+63: (ERROR #<UNBOUND-VARIABLE ’PATRICK {10019909F3}>)
+64: (SB-KERNEL:WITH-SIMPLE-CONDITION-RESTARTS ERROR NIL #<UNBOUND-VARIABLE ’PATRICK {10019909F3}>)
+65: ((LABELS SB-KERNEL::TRY :IN SB-KERNEL::RESTART-UNBOUND) #<UNBOUND-VARIABLE ’PATRICK {10019909F3}>)
+66: (SB-KERNEL::RESTART-UNBOUND ’PATRICK #<UNBOUND-VARIABLE ’PATRICK {10019909F3}> -5463)
+67: (SB-KERNEL:INTERNAL-ERROR #.(SB-SYS:INT-SAP #X7F864CF3B900) #<unused argument>)
+68: ("foreign function: call_into_lisp")
+69: ("foreign function: funcall2")
+70: ("foreign function: interrupt_internal_error")
+71: ("foreign function: handle_trap")
+72: ("foreign function: #x418812")
+73: ((LAMBDA (#:G376)) #<unused argument>)
+74: (INTERACTIVE-EVAL (CONS ’PATRICK (LIST SEYMOUR MARVIN)) :EVAL #<FUNCTION SB-DEBUG::DEBUG-EVAL>)
+75: (SB-DEBUG::DEBUG-EVAL-PRINT (CONS ’PATRICK (LIST SEYMOUR MARVIN)))
+76: (SB-DEBUG::DEBUG-LOOP-FUN)
+77: (INTERNAL-DEBUG)
+78: ((FLET DEBUG :IN SB-DEBUG::%INVOKE-DEBUGGER))
+79: (SB-DEBUG::%INVOKE-DEBUGGER #<UNBOUND-VARIABLE ’PATRICK {1001952BB3}>)
+80: ((FLET "LAMBDA0" :IN "SYS:SRC;CODE;DEBUG.LISP"))
+81: (SB-IMPL::CALL-WITH-SANE-IO-SYNTAX #<CLOSURE (FLET "LAMBDA0" :IN "SYS:SRC;CODE;DEBUG.LISP") {7F864CF3C2AB}>)
+82: ((FLET "THUNK" :IN SB-DEBUG::FUNCALL-WITH-DEBUG-IO-SYNTAX))
+83: (SB-IMPL::%WITH-STANDARD-IO-SYNTAX #<CLOSURE (FLET "THUNK" :IN SB-DEBUG::FUNCALL-WITH-DEBUG-IO-SYNTAX) {7F864CF3C37B}>)
+84: (SB-DEBUG::FUNCALL-WITH-DEBUG-IO-SYNTAX #<FUNCTION SB-DEBUG::%INVOKE-DEBUGGER> #<UNBOUND-VARIABLE ’PATRICK {1001952BB3}>)
+85: (INVOKE-DEBUGGER #<UNBOUND-VARIABLE ’PATRICK {1001952BB3}>)
+86: (ERROR #<UNBOUND-VARIABLE ’PATRICK {1001952BB3}>)
+87: (SB-KERNEL:WITH-SIMPLE-CONDITION-RESTARTS ERROR NIL #<UNBOUND-VARIABLE ’PATRICK {1001952BB3}>)
+88: ((LABELS SB-KERNEL::TRY :IN SB-KERNEL::RESTART-UNBOUND) #<UNBOUND-VARIABLE ’PATRICK {1001952BB3}>)
+89: (SB-KERNEL::RESTART-UNBOUND ’PATRICK #<UNBOUND-VARIABLE ’PATRICK {1001952BB3}> -3706)
+90: (SB-KERNEL:INTERNAL-ERROR #.(SB-SYS:INT-SAP #X7F864CF3CA00) #<unused argument>)
+91: ("foreign function: call_into_lisp")
+92: ("foreign function: funcall2")
+93: ("foreign function: interrupt_internal_error")
+94: ("foreign function: handle_trap")
+95: ("foreign function: #x418812")
+96: ((LAMBDA (#:G374)) #<unused argument>)
+97: (INTERACTIVE-EVAL (CONS ’PATRICK (SEYMOUR MARVIN)) :EVAL #<FUNCTION SB-DEBUG::DEBUG-EVAL>)
+98: (SB-DEBUG::DEBUG-EVAL-PRINT (CONS ’PATRICK (SEYMOUR MARVIN)))
+99: (SB-DEBUG::DEBUG-LOOP-FUN)
+100: (INTERNAL-DEBUG)
+101: ((FLET DEBUG :IN SB-DEBUG::%INVOKE-DEBUGGER))
+102: (SB-DEBUG::%INVOKE-DEBUGGER #<UNBOUND-VARIABLE ’ {10019136F3}>)
+103: ((FLET "LAMBDA0" :IN "SYS:SRC;CODE;DEBUG.LISP"))
+104: (SB-IMPL::CALL-WITH-SANE-IO-SYNTAX #<CLOSURE (FLET "LAMBDA0" :IN "SYS:SRC;CODE;DEBUG.LISP") {7F864CF3D3AB}>)
+105: ((FLET "THUNK" :IN SB-DEBUG::FUNCALL-WITH-DEBUG-IO-SYNTAX))
+106: (SB-IMPL::%WITH-STANDARD-IO-SYNTAX #<CLOSURE (FLET "THUNK" :IN SB-DEBUG::FUNCALL-WITH-DEBUG-IO-SYNTAX) {7F864CF3D47B}>)
+107: (SB-DEBUG::FUNCALL-WITH-DEBUG-IO-SYNTAX #<FUNCTION SB-DEBUG::%INVOKE-DEBUGGER> #<UNBOUND-VARIABLE ’ {10019136F3}>)
+108: (INVOKE-DEBUGGER #<UNBOUND-VARIABLE ’ {10019136F3}>)
+109: (ERROR #<UNBOUND-VARIABLE ’ {10019136F3}>)
+110: (SB-KERNEL:WITH-SIMPLE-CONDITION-RESTARTS ERROR NIL #<UNBOUND-VARIABLE ’ {10019136F3}>)
+111: ((LABELS SB-KERNEL::TRY :IN SB-KERNEL::RESTART-UNBOUND) #<UNBOUND-VARIABLE ’ {10019136F3}>)
+112: (SB-KERNEL::RESTART-UNBOUND ’ #<UNBOUND-VARIABLE ’ {10019136F3}> -5374)
+113: (SB-KERNEL:INTERNAL-ERROR #.(SB-SYS:INT-SAP #X7F864CF3DB00) #<unused argument>)
+114: ("foreign function: call_into_lisp")
+115: ("foreign function: funcall2")
+116: ("foreign function: interrupt_internal_error")
+117: ("foreign function: handle_trap")
+118: ("foreign function: #x418812")
+119: ((LAMBDA (#:G372)) #<unused argument>)
+120: (INTERACTIVE-EVAL (+ 1 ’ (LENGTH (LIST T T T T))) :EVAL #<FUNCTION SB-DEBUG::DEBUG-EVAL>)
+121: (SB-DEBUG::DEBUG-EVAL-PRINT (+ 1 ’ (LENGTH (LIST T T T T))))
+122: (SB-DEBUG::DEBUG-LOOP-FUN)
+123: (INTERNAL-DEBUG)
+124: ((FLET DEBUG :IN SB-DEBUG::%INVOKE-DEBUGGER))
+125: (SB-DEBUG::%INVOKE-DEBUGGER #<UNBOUND-VARIABLE AND {10018D3513}>)
+126: ((FLET "LAMBDA0" :IN "SYS:SRC;CODE;DEBUG.LISP"))
+127: (SB-IMPL::CALL-WITH-SANE-IO-SYNTAX #<CLOSURE (FLET "LAMBDA0" :IN "SYS:SRC;CODE;DEBUG.LISP") {7F864CF3E4AB}>)
+128: ((FLET "THUNK" :IN SB-DEBUG::FUNCALL-WITH-DEBUG-IO-SYNTAX))
+129: (SB-IMPL::%WITH-STANDARD-IO-SYNTAX #<CLOSURE (FLET "THUNK" :IN SB-DEBUG::FUNCALL-WITH-DEBUG-IO-SYNTAX) {7F864CF3E57B}>)
+130: (SB-DEBUG::FUNCALL-WITH-DEBUG-IO-SYNTAX #<FUNCTION SB-DEBUG::%INVOKE-DEBUGGER> #<UNBOUND-VARIABLE AND {10018D3513}>)
+131: (INVOKE-DEBUGGER #<UNBOUND-VARIABLE AND {10018D3513}>)
+132: (ERROR #<UNBOUND-VARIABLE AND {10018D3513}>)
+133: (SB-KERNEL:WITH-SIMPLE-CONDITION-RESTARTS ERROR NIL #<UNBOUND-VARIABLE AND {10018D3513}>)
+134: ((LABELS SB-KERNEL::TRY :IN SB-KERNEL::RESTART-UNBOUND) #<UNBOUND-VARIABLE AND {10018D3513}>)
+135: (SB-KERNEL::RESTART-UNBOUND AND #<UNBOUND-VARIABLE AND {10018D3513}> -4217)
+136: (SB-KERNEL:INTERNAL-ERROR #.(SB-SYS:INT-SAP #X7F864CF3EC00) #<unused argument>)
+137: ("foreign function: call_into_lisp")
+138: ("foreign function: funcall2")
+139: ("foreign function: interrupt_internal_error")
+140: ("foreign function: handle_trap")
+141: ("foreign function: #x418812")
+142: ((LAMBDA (#:G370)) #<unused argument>)
+143: (INTERACTIVE-EVAL (LIST 2 AND 2 IS 4) :EVAL #<FUNCTION SB-DEBUG::DEBUG-EVAL>)
+144: (SB-DEBUG::DEBUG-EVAL-PRINT (LIST 2 AND 2 IS 4))
+145: (SB-DEBUG::DEBUG-LOOP-FUN)
+146: (INTERNAL-DEBUG)
+147: ((FLET DEBUG :IN SB-DEBUG::%INVOKE-DEBUGGER))
+148: (SB-DEBUG::%INVOKE-DEBUGGER #<SB-INT:COMPILED-PROGRAM-ERROR {1001899E03}>)
+149: ((FLET "LAMBDA0" :IN "SYS:SRC;CODE;DEBUG.LISP"))
+150: (SB-IMPL::CALL-WITH-SANE-IO-SYNTAX #<CLOSURE (FLET "LAMBDA0" :IN "SYS:SRC;CODE;DEBUG.LISP") {7F864CF3F58B}>)
+151: ((FLET "THUNK" :IN SB-DEBUG::FUNCALL-WITH-DEBUG-IO-SYNTAX))
+152: (SB-IMPL::%WITH-STANDARD-IO-SYNTAX #<CLOSURE (FLET "THUNK" :IN SB-DEBUG::FUNCALL-WITH-DEBUG-IO-SYNTAX) {7F864CF3F65B}>)
+153: (SB-DEBUG::FUNCALL-WITH-DEBUG-IO-SYNTAX #<FUNCTION SB-DEBUG::%INVOKE-DEBUGGER> #<SB-INT:COMPILED-PROGRAM-ERROR {1001899E03}>)
+154: (INVOKE-DEBUGGER #<SB-INT:COMPILED-PROGRAM-ERROR {1001899E03}>)
+155: (ERROR SB-INT:COMPILED-PROGRAM-ERROR :MESSAGE "Error while parsing arguments to special operator THE:
+  too many elements in
+    (QUICK BROWN FOX)
+  to satisfy lambda list
+    (SB-C::VALUE-TYPE SB-KERNEL:FORM):
+  exactly 2 expected, but got 3" :SOURCE "(THE QUICK BROWN FOX)")
+156: ((LAMBDA ()))
+157: (SB-INT:SIMPLE-EVAL-IN-LEXENV (THE QUICK BROWN FOX) #<NULL-LEXENV>)
+158: (SB-INT:SIMPLE-EVAL-IN-LEXENV (THIRD (THE QUICK BROWN FOX)) #<NULL-LEXENV>)
+159: (EVAL (THIRD (THE QUICK BROWN FOX)))
+160: (INTERACTIVE-EVAL (THIRD (THE QUICK BROWN FOX)) :EVAL NIL)
+161: (SB-IMPL::REPL-FUN NIL)
+162: ((FLET "LAMBDA0" :IN "SYS:SRC;CODE;TOPLEVEL.LISP"))
+163: (SB-IMPL::%WITH-REBOUND-IO-SYNTAX #<CLOSURE (FLET "LAMBDA0" :IN "SYS:SRC;CODE;TOPLEVEL.LISP") {7F864CF3FB7B}>)
+164: (SB-IMPL::TOPLEVEL-REPL NIL)
+165: (SB-IMPL::TOPLEVEL-INIT)
+166: ((FLET SB-UNIX::BODY :IN SAVE-LISP-AND-DIE))
+167: ((FLET "WITHOUT-INTERRUPTS-BODY-14" :IN SAVE-LISP-AND-DIE))
+168: ((LABELS SB-IMPL::RESTART-LISP :IN SAVE-LISP-AND-DIE))
+
+debugger invoked on a SIMPLE-ERROR in thread #<THREAD "main thread" RUNNING {1000560083}>: Maximum error nesting depth exceeded
+
+Type HELP for debugger help, or (SB-EXT:EXIT) to exit from SBCL.
+
+restarts (invokable by number or by possibly-abbreviated name):
+  0: [ABORT] Reduce debugger level (to debug level 7).
+  1:         Reduce debugger level (to debug level 6).
+  2:         Reduce debugger level (to debug level 5).
+  3:         Reduce debugger level (to debug level 4).
+  4:         Reduce debugger level (to debug level 3).
+  5:         Reduce debugger level (to debug level 2).
+  6:         Reduce debugger level (to debug level 1).
+  7:         Exit debugger, returning to top level.
+
+(INVOKE-DEBUGGER #<SIMPLE-ERROR "Maximum error nesting depth exceeded" {1001BE1C83}>)
+0[8] (mystery (list ’first ’second))
+Help! ERROR-ERROR is 3 levels deep. Will try to THROW this thread to the toplevel.
+; 
+; compilation unit aborted
+;   caught 2 fatal ERROR conditions
+* (list 'first 'second)
+(FIRST SECOND)
+* (defun speak (x y) (list ’all ’x ’is ’y))
+; in: DEFUN SPEAK
+;     (SB-INT:NAMED-LAMBDA SPEAK
+;         (X Y)
+;       (BLOCK SPEAK (LIST ’ALL ’X ’IS ’Y)))
+; 
+; caught STYLE-WARNING:
+;   The variable X is defined but never used.
+; 
+; caught STYLE-WARNING:
+;   The variable Y is defined but never used.
+; in: DEFUN SPEAK
+;     (LIST ’ALL ’X ’IS ’Y)
+; 
+; caught WARNING:
+;   undefined variable: COMMON-LISP-USER::’ALL
+; 
+; caught WARNING:
+;   undefined variable: COMMON-LISP-USER::’IS
+; 
+; caught WARNING:
+;   undefined variable: COMMON-LISP-USER::’X
+; 
+; caught WARNING:
+;   undefined variable: COMMON-LISP-USER::’Y
+; 
+; compilation unit finished
+;   Undefined variables:
+;     ’ALL ’IS ’X ’Y
+;   caught 4 WARNING conditions
+;   caught 2 STYLE-WARNING conditions
+SPEAK
+* (defun speak (x y) (list 'all x 'is y))
+WARNING: redefining COMMON-LISP-USER::SPEAK in DEFUN
+SPEAK
+* (defun speak (x) (y) (list ’all x ’is y))
+; in: DEFUN SPEAK
+;     (LIST ’ALL X ’IS Y)
+; 
+; caught WARNING:
+;   undefined variable: COMMON-LISP-USER::Y
+
+;     (Y)
+; 
+; caught STYLE-WARNING:
+;   undefined function: COMMON-LISP-USER::Y
+
+;     (LIST ’ALL X ’IS Y)
+; 
+; caught WARNING:
+;   undefined variable: COMMON-LISP-USER::’ALL
+; 
+; caught WARNING:
+;   undefined variable: COMMON-LISP-USER::’IS
+; 
+; compilation unit finished
+;   Undefined function:
+;     Y
+;   Undefined variables:
+;     Y ’ALL ’IS
+;   caught 3 WARNING conditions
+;   caught 1 STYLE-WARNING condition
+WARNING: redefining COMMON-LISP-USER::SPEAK in DEFUN
+SPEAK
+* (defun speak (x y) (list 'all x 'is y))
+WARNING: redefining COMMON-LISP-USER::SPEAK in DEFUN
+SPEAK
+* (defun speak ((x) (y)) (list all ’x is ’y))
+; in: DEFUN SPEAK
+;     (SB-INT:NAMED-LAMBDA SPEAK
+;         ((X) (Y))
+;       (BLOCK SPEAK (LIST ALL ’X IS ’Y)))
+; 
+; caught ERROR:
+;   Required argument is not a symbol: (X)
+
+debugger invoked on a SB-INT:SIMPLE-PROGRAM-ERROR in thread
+#<THREAD "main thread" RUNNING {1000560083}>:
+  Required argument is not a symbol: (X)
+
+Type HELP for debugger help, or (SB-EXT:EXIT) to exit from SBCL.
+
+restarts (invokable by number or by possibly-abbreviated name):
+  0: [ABORT] Exit debugger, returning to top level.
+
+((FLET "LAMBDA0" :IN "SYS:SRC;COMPILER;TARGET-MAIN.LISP"))
+0] (defun speak (x y) (list 'all x 'is y))
+
+
+; 
+; caught STYLE-WARNING:
+;   redefining COMMON-LISP-USER::SPEAK in DEFUN
+SPEAK
+0] (list 'cons t nil)
+
+(CONS T NIL)
+0] (eval (list 'cons t nil))
+
+(T)
+0] (eval (eval (list 'cons t nil)))
+
+
+debugger invoked on a UNDEFINED-FUNCTION in thread
+#<THREAD "main thread" RUNNING {1000560083}>:
+  The function COMMON-LISP:T is undefined.
+
+Type HELP for debugger help, or (SB-EXT:EXIT) to exit from SBCL.
+
+restarts (invokable by number or by possibly-abbreviated name):
+  0: [CONTINUE      ] Retry calling T.
+  1: [USE-VALUE     ] Call specified function.
+  2: [RETURN-VALUE  ] Return specified values.
+  3: [RETURN-NOTHING] Return zero values.
+  4: [ABORT         ] Reduce debugger level (to debug level 1).
+  5:                  Exit debugger, returning to top level.
+
+("undefined function")
+0[2] (apply #'cons '(t nil))
+; No debug variables for current frame: using EVAL instead of EVAL-IN-FRAME.
+(T)
+0[2] (eval nil)
+; No debug variables for current frame: using EVAL instead of EVAL-IN-FRAME.
+NIL
+0[2] (list 'eval nil)
+; No debug variables for current frame: using EVAL instead of EVAL-IN-FRAME.
+(EVAL NIL)
+0[2] (eval (list 'eval nil))
+; No debug variables for current frame: using EVAL instead of EVAL-IN-FRAME.
+NIL
+0[2] (exit)
+; No debug variables for current frame: using EVAL instead of EVAL-IN-FRAME.
+; 
+; compilation unit aborted
+;   caught 1 fatal ERROR condition
+;   caught 1 ERROR condition
+;   caught 1 STYLE-WARNING condition
+[0;32m@etan91011 [0m➜ [1;34m/workspaces/csci-330-homeworks-etan91011/Hwork2 [0;36m([1;31mmain[0;36m) [0m$ exit
+exit
+
+Script done on 2025-02-05 04:50:41+00:00 [COMMAND_EXIT_CODE="0"]
