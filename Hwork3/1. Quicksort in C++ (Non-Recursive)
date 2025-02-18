@@ -1,0 +1,87 @@
+Script started on 2025-02-18 04:54:04+00:00 [TERM="xterm-256color" TTY="/dev/pts/0" COLUMNS="165" LINES="15"]
+[0;32m@etan91011 [0m➜ [1;34m/workspaces/csci-330-homeworks-etan91011/Hwork3 [0;36m([1;31mmain[0;36m) [0m$ g++ "1. Quicksort in C++ (Non-Recursive).cpp" 
+[01m[K1. Quicksort in C++ (Non-Recursive).cpp:[m[K In function ‘[01m[Kvoid quicksort(std::vector<int>&)[m[K’:
+[01m[K1. Quicksort in C++ (Non-Recursive).cpp:35:14:[m[K [01;35m[Kwarning: [m[Kstructured bindings only available with ‘[01m[K-std=c++17[m[K’ or ‘[01m[K-std=gnu++17[m[K’
+   35 |         auto [01;35m[K[[m[Klow, high] = s.top(); // Extract the topmost range to process
+      |              [01;35m[K^[m[K
+[0;32m@etan91011 [0m➜ [1;34m/workspaces/csci-330-homeworks-etan91011/Hwork3 [0;36m([1;31mmain[0;36m) [0m$ ls
+'1. Quicksort in C++ (Non-Recursive)'      '2. Implementing Mergesort in Lisp.lisp'        '4. Implement Insertion sort in Lisp'
+'1. Quicksort in C++ (Non-Recursive).cpp'  '3. Implement a “bottom-up” Mergesort in Lisp'   [0m[01;32ma.out[0m
+[0;32m@etan91011 [0m➜ [1;34m/workspaces/csci-330-homeworks-etan91011/Hwork3 [0;36m([1;31mmain[0;36m) [0m$ ./ a[K[Ka.out 
+Unsorted array: 4 44 20 85 11 66 
+Sorted array: 4 11 20 44 66 85 
+[0;32m@etan91011 [0m➜ [1;34m/workspaces/csci-330-homeworks-etan91011/Hwork3 [0;36m([1;31mmain[0;36m) [0m$ ./a.out 
+Unsorted array: 83 31 55 83 13 8 
+Sorted array: 8 13 31 55 83 83 
+[0;32m@etan91011 [0m➜ [1;34m/workspaces/csci-330-homeworks-etan91011/Hwork3 [0;36m([1;31mmain[0;36m) [0m$ ./a.out 
+Unsorted array: 43 57 95 36 33 69 
+Sorted array: 33 36 43 57 69 95 
+[0;32m@etan91011 [0m➜ [1;34m/workspaces/csci-330-homeworks-etan91011/Hwork3 [0;36m([1;31mmain[0;36m) [0m$ (exit)
+[0;32m@etan91011 [0m➜ [1;34m/workspaces/csci-330-homeworks-etan91011/Hwork3 [0;36m([1;31mmain[0;36m) [0m$ ls
+'1. Quicksort in C++ (Non-Recursive)'      '2. Implementing Mergesort in Lisp.lisp'        '4. Implement Insertion sort in Lisp'
+'1. Quicksort in C++ (Non-Recursive).cpp'  '3. Implement a “bottom-up” Mergesort in Lisp'   [0m[01;32ma.out[0m
+[0;32m@etan91011 [0m➜ [1;34m/workspaces/csci-330-homeworks-etan91011/Hwork3 [0;36m([1;31mmain[0;36m) [0m$ ls(exit)./a.out ls[Kg++ "1. Quicksort in C++ (Non-Recursive).cpp" exit[Ksbclexitg++ "1. Quicksort in C++ (Non-Recursive).cpp" exit[Ksbclexitg++ "1. Quicksort in C++ (Non-Recursive).cpp" ls[K./a.out [2P(exit)[4Pls[Kscript[Kt "2. Implementing Mergesort in Lisp.lisp" [1P[1P[1P[1P[1P
+Script started, file is 2. Implementing Mergesort in Lisp
+[0;32m@etan91011 [0m➜ [1;34m/workspaces/csci-330-homeworks-etan91011/Hwork3 [0;36m([1;31mmain[0;36m) [0m$ sbcl "2. Implementing Mergesort in Lisp.lisp" 
+This is SBCL 2.0.1.debian, an implementation of ANSI Common Lisp.
+More information about SBCL is available at <http://www.sbcl.org/>.
+
+SBCL is free software, provided as is, with absolutely no warranty.
+It is mostly in the public domain; some portions are provided under
+BSD-style licenses.  See the CREDITS and COPYING files in the
+distribution for more information.
+* ^C
+debugger invoked on a SB-SYS:INTERACTIVE-INTERRUPT in thread
+#<THREAD "main thread" RUNNING {1000560083}>:
+  Interactive interrupt at #x7F20760B5B87.
+
+Type HELP for debugger help, or (SB-EXT:EXIT) to exit from SBCL.
+
+restarts (invokable by number or by possibly-abbreviated name):
+  0: [CONTINUE] Return from SB-UNIX:SIGINT.
+  1: [ABORT   ] Exit debugger, returning to top level.
+
+("bogus stack frame")
+0] ^C
+
+debugger invoked on a SB-SYS:INTERACTIVE-INTERRUPT in thread
+#<THREAD "main thread" RUNNING {1000560083}>:
+  Interactive interrupt at #x7F20760B5B87.
+
+Type HELP for debugger help, or (SB-EXT:EXIT) to exit from SBCL.
+
+restarts (invokable by number or by possibly-abbreviated name):
+  0: [CONTINUE] Return from SB-UNIX:SIGINT.
+  1: [ABORT   ] Reduce debugger level (to debug level 1).
+  2:            Return from SB-UNIX:SIGINT.
+  3:            Exit debugger, returning to top level.
+
+("bogus stack frame")
+0[2] (exit)
+; No debug variables for current frame: using EVAL instead of EVAL-IN-FRAME.
+[0;32m@etan91011 [0m➜ [1;34m/workspaces/csci-330-homeworks-etan91011/Hwork3 [0;36m([1;31mmain[0;36m) [0m$ sbcl "2. Implementing Mergesort in Lisp.lisp" exit[Ksbclexitsbcl "2. Implementing Mergesort in Lisp.lisp" [Kscript "2. Implementing Mergesort in Lisp"
+Script started, file is 2. Implementing Mergesort in Lisp
+[0;32m@etan91011 [0m➜ [1;34m/workspaces/csci-330-homeworks-etan91011/Hwork3 [0;36m([1;31mmain[0;36m) [0m$ sbcl --script "2. Implementing Mergesort in Lisp.lisp" 
+Unsorted List: (84 78 24 15 32 54 89 24 99 46)
+Sorted List: (15 24 24 32 46 54 78 84 89 99)
+[0;32m@etan91011 [0m➜ [1;34m/workspaces/csci-330-homeworks-etan91011/Hwork3 [0;36m([1;31mmain[0;36m) [0m$ sbcl --script "2. Implementing Mergesort in Lisp.lisp" 
+Unsorted List: (74 58 42 99 38 88 95 45 25 62)
+Sorted List: (25 38 42 45 58 62 74 88 95 99)
+[0;32m@etan91011 [0m➜ [1;34m/workspaces/csci-330-homeworks-etan91011/Hwork3 [0;36m([1;31mmain[0;36m) [0m$ sbcl --script "2. Implementing Mergesort in Lisp.lisp" 
+Unsorted List: (65 90 85 83 69 69 76 26 43 8)
+Sorted List: (8 26 43 65 69 69 76 83 85 90)
+[0;32m@etan91011 [0m➜ [1;34m/workspaces/csci-330-homeworks-etan91011/Hwork3 [0;36m([1;31mmain[0;36m) [0m$ (exit)
+[0;32m@etan91011 [0m➜ [1;34m/workspaces/csci-330-homeworks-etan91011/Hwork3 [0;36m([1;31mmain[0;36m) [0m$ script 3[K"3. Implement a “bottom-up” Mergesort in Lisp" [K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[Kmv "3. Implement a “bottom-up” Mergesort in Lisp" "3. Implement a “bottom-up” Mergesort in Lisp" [A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C
+[1@.[1@l[1@i[1@s[1@p
+[0;32m@etan91011 [0m➜ [1;34m/workspaces/csci-330-homeworks-etan91011/Hwork3 [0;36m([1;31mmain[0;36m) [0m$ ls
+'1. Quicksort in C++ (Non-Recursive)'      '2. Implementing Mergesort in Lisp'       '3. Implement a “bottom-up” Mergesort in Lisp.lisp'   [0m[01;32ma.out[0m
+'1. Quicksort in C++ (Non-Recursive).cpp'  '2. Implementing Mergesort in Lisp.lisp'  '4. Implement Insertion sort in Lisp'
+[0;32m@etan91011 [0m➜ [1;34m/workspaces/csci-330-homeworks-etan91011/Hwork3 [0;36m([1;31mmain[0;36m) [0m$ script "3. Implement a “bottom-up” Mergesort in Lisp.lisp" [1P[1P[1P[1P[1P
+Script started, file is 3. Implement a “bottom-up” Mergesort in Lisp
+[0;32m@etan91011 [0m➜ [1;34m/workspaces/csci-330-homeworks-etan91011/Hwork3 [0;36m([1;31mmain[0;36m) [0m$ sbcl --script "3. Implement a “bottom-up” Mergesort in Lisp.lisp" 
+Unsorted List: (94 95 78 78 80 97 71 50 17 10)
+Sorted List: (10 17 50 71 78 78 80 94 95 97)
+[0;32m@etan91011 [0m➜ [1;34m/workspaces/csci-330-homeworks-etan91011/Hwork3 [0;36m([1;31mmain[0;36m) [0m$ sbcl --script "3. Implement a “bottom-up” Mergesort in Lisp.lisp" 
+Unsorted List: (72 28 52 67 57 93 55 75 19 27)
+Sorted List: (19 27 28 52 55 57 67 72 75 93)
+[0;32m@etan91011 [0m➜ [1;34m/workspaces/csci-330-homeworks-etan91011/Hwork3 [0;36m(
